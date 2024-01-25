@@ -1,6 +1,7 @@
 
 
 export type NftAttributes = {
+    [x: string]: any
     trait_type : string,
     value : string
 }

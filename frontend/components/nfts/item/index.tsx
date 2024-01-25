@@ -1,20 +1,25 @@
+import { NftMeta } from "@/types/nft";
 import { FunctionComponent } from "react";
 
-const NftItem: FunctionComponent = () => {
+interface NftItemProps{
+    props : NftMeta
+}
+
+const NftItem: FunctionComponent<NftItemProps> = ({props}) => {
     return (
         <><div className="flex-shrink-0">
             <img
                 className={`h-full w-full object-cover`}
-                src={"https://fuchsia-permanent-turtle-550.mypinata.cloud/ipfs/QmScveKqD2mYxToWqCopR5zXZdmTwbZm5ytvpGQZii1FWZ"}
+                src={props.image}
                 alt="New NFT" />
         </div><div className="flex-1 bg-white p-6 flex flex-col justify-between">
                 <div className="flex-1">
-                    <p className="text-sm font-medium text-indigo-600">
+                    <p className="text-sm font-medium text-red-600">
                         Creatures NFT
                     </p>
                     <div className="block mt-2">
-                        <p className="text-xl font-semibold text-gray-900">NFT Creature #1</p>
-                        <p className="mt-3 mb-3 text-base text-gray-500">Fierce violet creature. Very durable and tanky.</p>
+                        <p className="text-xl font-semibold text-gray-900">{props.name}</p>
+                        <p className="mt-3 mb-3 text-base text-gray-500">{props.description}</p>
                     </div>
                 </div>
                 <div className="overflow-hidden mb-4">
@@ -23,7 +28,7 @@ const NftItem: FunctionComponent = () => {
                             <dt className="order-2 text-sm font-medium text-gray-500">Price</dt>
                             <dd className="order-1 text-xl font-extrabold text-red-600">
                                 <div className="flex justify-center items-center">
-                                    100
+                                    {props.attributes.value}
                                     {/* <img className="h-6" src="/images/small-eth.webp"/> */}
                                     ETH
                                 </div>

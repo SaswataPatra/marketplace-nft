@@ -1,12 +1,20 @@
 import { FunctionComponent } from "react";
 import NftItem from "../item";
+import { NftMeta } from "@/types/nft";
 
+interface NftListProps {
+    children : NftMeta[]
+}
 
-const NftList: FunctionComponent = () =>{
+const NftList: FunctionComponent<NftListProps> = ({children}) =>{
     return (
-        <div className="flex flex-col rounded-lg shadow-lg overflow-hidden">
-        <NftItem></NftItem>
-      </div>
+        <>
+        {children.map((nft)=>(
+            <div key = {nft.image} className="flex flex-col rounded-lg shadow-lg overflow-hidden">
+            <NftItem props={nft}/>
+          </div>
+        ))}
+        </>
     )
 }
 

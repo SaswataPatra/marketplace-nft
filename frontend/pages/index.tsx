@@ -2,7 +2,8 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import BaseLayout from "@/components/ui/Layout/BaseLayout";
 import { NftList } from "@/components/nfts";
-
+import nfts from "../content/meta.json"
+import { NftMeta } from "@/types/nft";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +22,7 @@ export default function Home() {
             </p>
           </div>
           <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
-          <NftList/>
+          <NftList children={nfts as unknown as NftMeta[]}/>
           </div>
         </div>
       </div>

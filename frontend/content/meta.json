@@ -6,15 +6,15 @@
     "attributes": [
       {
         "trait_type": "attack",
-        "value": "20"
+        "value": "30"
       },
       {
         "trait_type": "health",
-        "value": "100"
+        "value": "80"
       },
       {
         "trait_type": "speed",
-        "value": "30"
+        "value": "40"
       }
     ]
   },
@@ -26,15 +26,15 @@
     "attributes": [
       {
         "trait_type": "attack",
-        "value": "40"
+        "value": "60"
       },
       {
         "trait_type": "health",
-        "value": "80"
+        "value": "110"
       },
       {
         "trait_type": "speed",
-        "value": "50"
+        "value": "70"
       }
     ]
   },
@@ -46,15 +46,15 @@
     "attributes": [
       {
         "trait_type": "attack",
-        "value": "40"
+        "value": "825"
       },
       {
         "trait_type": "health",
-        "value": "80"
+        "value": "435"
       },
       {
         "trait_type": "speed",
-        "value": "50"
+        "value": "300"
       }
     ]
   },
@@ -66,15 +66,15 @@
     "attributes": [
       {
         "trait_type": "attack",
-        "value": "40"
+        "value": "70"
       },
       {
         "trait_type": "health",
-        "value": "80"
+        "value": "130"
       },
       {
         "trait_type": "speed",
-        "value": "50"
+        "value": "60"
       }
     ]
   },
@@ -86,96 +86,96 @@
     "attributes": [
       {
         "trait_type": "attack",
-        "value": "40"
-      },
-      {
-        "trait_type": "health",
         "value": "80"
       },
       {
-        "trait_type": "speed",
+        "trait_type": "health",
         "value": "50"
+      },
+      {
+        "trait_type": "speed",
+        "value": "40"
       }
     ]
   },
 
   {
-    "description": "Elon musk selling food ",
-    "image": "https://amber-managerial-stingray-431.mypinata.cloud/ipfs/QmTKSjXvkt71aHHhFax7zvZ9Hsu222f79gHcE2Qkvz5jv8",
+    "description": "beer enjoying snow fall moment ",
+    "image": "https://amber-managerial-stingray-431.mypinata.cloud/ipfs/QmWy3WiJidqyuWBb97NK9i5d72QymY2JrY98UGHAdSvtEb",
     "name": "NFT creature #6",
     "attributes": [
       {
         "trait_type": "attack",
-        "value": "40"
+        "value": "120"
       },
       {
         "trait_type": "health",
-        "value": "80"
+        "value": "100"
       },
       {
         "trait_type": "speed",
-        "value": "50"
+        "value": "70"
       }
     ]
   },
 
   {
-    "description": "Mark zuckerberg fight with sam altman for a ferrari ",
-    "image": "https://amber-managerial-stingray-431.mypinata.cloud/ipfs/QmSbdfxbC1zorReiqeJ57imndeC4ed2afiEpCs9gFB5xKc",
+    "description": "Horse ",
+    "image": "https://amber-managerial-stingray-431.mypinata.cloud/ipfs/Qmc6QJiwHYtrcTzXXXGinYnZcJEe8M8i1YyEwUw9xVKqTM",
     "name": "NFT creature #7",
     "attributes": [
       {
         "trait_type": "attack",
-        "value": "40"
+        "value": "15,00"
       },
       {
         "trait_type": "health",
-        "value": "80"
+        "value": "230"
       },
       {
         "trait_type": "speed",
-        "value": "50"
+        "value": "90"
       }
     ]
   },
 
   {
-    "description": "People hanging from helicopters ",
-    "image": "https://amber-managerial-stingray-431.mypinata.cloud/ipfs/Qme68SxzhugQgRAFZGkVTtVRL1gYCXETb3zy8qWohgE7R9",
+    "description": "cat and sheep seeing each other ",
+    "image": "https://amber-managerial-stingray-431.mypinata.cloud/ipfs/QmbujFBY4zfo4yibkNTiDsSW8LiuigSiQaFB9cYXpBVArT",
     "name": "NFT creature #8",
     "attributes": [
       {
         "trait_type": "attack",
-        "value": "40"
+        "value": "780"
       },
       {
         "trait_type": "health",
-        "value": "80"
+        "value": "160"
       },
       {
         "trait_type": "speed",
-        "value": "50"
+        "value": "110"
       }
     ]
   },
 
-  
+
   {
-    "description": "Messi and Ronaldo Playing cricket",
-    "image": "https://amber-managerial-stingray-431.mypinata.cloud/ipfs/Qmb9Cv8HSoxKrgDS6e21sjyYRAmjKdb3WnNwf1FRxhk4gZ",
+    "description": "Flamingo and Eagle",
+    "image": "https://amber-managerial-stingray-431.mypinata.cloud/ipfs/QmVWQJkoYYzY5vTkTBLkPX679bFJHoAG8KuGXumdwaukgT",
     "name": "NFT creature #9",
     "attributes": [
       {
         "trait_type": "attack",
-        "value": "40"
+        "value": "19,700"
       },
       {
         "trait_type": "health",
-        "value": "80"
+        "value": "700"
       },
       {
         "trait_type": "speed",
-        "value": "50"
+        "value": "420"
       }
     ]
   },
@@ -187,15 +187,55 @@
     "attributes": [
       {
         "trait_type": "attack",
-        "value": "40"
+        "value": "750"
       },
       {
         "trait_type": "health",
-        "value": "80"
+        "value": "320"
       },
       {
         "trait_type": "speed",
-        "value": "50"
+        "value": "90"
+      }
+    ]
+  },
+
+  {
+    "description": "Monkey NFT",
+    "image": "https://amber-managerial-stingray-431.mypinata.cloud/ipfs/QmYDsnjvxryKTi7LCAW7ZhXUmLzE5edLJRkJuydDdkfGJD",
+    "name": "NFT creature #11",
+    "attributes": [
+      {
+        "trait_type": "attack",
+        "value": "640"
+      },
+      {
+        "trait_type": "health",
+        "value": "290"
+      },
+      {
+        "trait_type": "speed",
+        "value": "110"
+      }
+    ]
+  },
+
+  {
+    "description": "Black Panther NFT",
+    "image": "https://amber-managerial-stingray-431.mypinata.cloud/ipfs/QmWJM6outRwVG94V28wwUAEgvCKcGNxmHgLZ9zXAJNyvo3",
+    "name": "NFT creature #11",
+    "attributes": [
+      {
+        "trait_type": "attack",
+        "value": "1240"
+      },
+      {
+        "trait_type": "health",
+        "value": "690"
+      },
+      {
+        "trait_type": "speed",
+        "value": "190"
       }
     ]
   }

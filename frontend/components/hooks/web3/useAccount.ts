@@ -1,13 +1,21 @@
-// import useSWR from "swr"
+import { CryptoHookFactory } from "@/types/hook"
+import useSWR, { SWRConfiguration } from "swr"
 
+export type UseAccountResponse = {
+    isLoading : boolean
+}
+const config:SWRConfiguration ={
+    revalidateOnFocus : false
+}
+type AccountHookFactory = CryptoHookFactory<string,UseAccountResponse>
+export type UseAccountHook = ReturnType<AccountHookFactory>
+export const hookFactory : AccountHookFactory =({provider}) => (params) =>{
+    const swrRes = useSWR(provider?"hooks/web3/useAccount":null,()=>{
+        console.log(params)
+        console.log(provider)
+        return "Test user"
+    },config)
+    return swrRes
+}
 
-// const hookFactory : CryptoHookFactory<string,string> =({provider}) => (params) =>{
-//     const swrRes = useSWR(provider?"hooks/web3/useAccount":null,()=>{
-//         console.log(params)
-//         console.log(provider)
-//         return "Test user"
-//     })
-//     return swrRes
-// }
-
-// export default hookFactory = CryptoHookFactory({ethereum : null, provider : null})
+export const useAccount = ()=>{hookFactory({ethereum : undefined, provider : undefined})}

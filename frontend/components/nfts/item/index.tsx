@@ -40,17 +40,15 @@ const NftItem: FunctionComponent<NftItemProps> = ({ props }) => {
                 </div>
               </dd>
             </div>
-            {props.attributes.map((attr: NftAttributes) => (
-              <>
-                <div className="flex flex-col px-4 pt-4">
-                  <dt className="order-2 text-sm font-medium text-gray-500">
-                    {attr.trait_type}
-                  </dt>
-                  <dd className="order-1 text-xl font-extrabold text-red-600">
-                    {attr.value}
-                  </dd>
-                </div>
-              </>
+            {props.attributes.map((attr: NftAttributes, index:number) => (
+              <div key={index} className="flex flex-col px-4 pt-4">
+                <dt className="order-2 text-sm font-medium text-gray-500">
+                  {attr.trait_type}
+                </dt>
+                <dd className="order-1 text-xl font-extrabold text-red-600">
+                  {attr.value}
+                </dd>
+              </div>
             ))}
           </dl>
         </div>
@@ -74,3 +72,9 @@ const NftItem: FunctionComponent<NftItemProps> = ({ props }) => {
 };
 
 export default NftItem;
+
+
+
+
+
+

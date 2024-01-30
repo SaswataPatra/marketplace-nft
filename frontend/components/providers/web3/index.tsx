@@ -1,23 +1,61 @@
-import { FunctionComponent, createContext, useEffect, useState } from "react";
-import { Web3State, createDefaultState } from "./utils";
+import { FunctionComponent, createContext, useContext, useEffect, useState } from "react";
+import { Web3State, createDefaultState, createWeb3State, loadContract } from "./utils";
 import { ethers } from "ethers";
+import { MetaMaskInpageProvider } from "@metamask/providers";
 
-export const Web3Context = createContext<Web3State>(createDefaultState())
-const Web3Provider : FunctionComponent<any> = ({children})=>{
-    const [web3Api,setweb3api] = useState<Web3State>(createDefaultState())
-    const ethereum = typeof window !=='undefined'? window.ethereum : null
-    const provider = ethereum? new ethers.BrowserProvider(ethereum) : null
+const Web3Context = createContext<Web3State>(createDefaultState());
 
-    useEffect(()=>{
-        setweb3api(()=>{
-            return {
-                ethereum : null,
-                provider : null,
-                contract : null,
-                isLoading : false
+function pageReload() {
+    window.location.reload()
+}
+
+
+const Web3Provider: FunctionComponent<any> = ({ children }) => {
+    const [web3Api, setweb3Api] = useState<Web3State>(createDefaultState())
+
+    const ethereum = typeof window !== 'undefined' ? window.ethereum : null;
+    const provider = ethereum ? new ethers.BrowserProvider(ethereum) : null;
+    var flag = 0
+    useEffect(() => {
+        async function initWeb3() {
+            const contract = await loadContract("GoldToken", provider!);
+
+            try {
+                setGlobalListeners(window.ethereum)
+                setweb3Api(createWeb3State({
+                    ethereum: window.ethereum,
+                    provider,
+                    contract,
+                    isLoading: false
+                }))
+            } catch (e: any) {
+                console.error("Please, install metamask wallet ");
+                setweb3Api((api: any) => createWeb3State({
+                    ...api as any,
+                    isLoading: false
+                }))
             }
-        })
-    },[])
+
+        }
+        initWeb3();
+        return () => {
+            if (ethereum) { removeGlobalListeners(window.ethereum); }
+        }
+
+    }, [])
+    const setGlobalListeners = (ethereum: MetaMaskInpageProvider) => {
+        ethereum.on("accountsChanged", handleAccount(ethereum))
+        ethereum.on('chainChanged', pageReload);
+    }
+    const removeGlobalListeners = (ethereum: MetaMaskInpageProvider) => {
+        ethereum.removeListener("accountsChanged", handleAccount)
+        ethereum.removeListener("chainChanged", pageReload)
+    }
+    const handleAccount = (ethereum: MetaMaskInpageProvider) => async () => {
+        const isLocked =  !(await ethereum._metamask.isUnlocked());
+        if (isLocked) { pageReload(); }
+      }
+      
     return (
         <Web3Context.Provider value={web3Api}>
             {children}
@@ -25,8 +63,11 @@ const Web3Provider : FunctionComponent<any> = ({children})=>{
     )
 }
 
-export function useweb3(){
-    return 
+export function useWeb3() {
+    return useContext(Web3Context)
 }
-
+export function useHooks() {
+    const { hooks } = useWeb3();
+    return hooks;
+}
 export default Web3Provider

@@ -16,8 +16,8 @@ function classNames(...classes: string[]) {
 
 export default function Navbar() {
 
-  const swres = useAccount()
-  console.log(swres)
+  // const swres = useAccount()
+  // console.log(swres)
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (

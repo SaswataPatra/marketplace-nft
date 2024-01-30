@@ -1,7 +1,11 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import { useAccount } from '@/components/hooks/web3/useAccount'
+import { useWeb3 } from '@/components/providers/web3'
+
+
+
+
 
 const navigation = [
   { name: 'Marketplace', href: '#', current: true },
@@ -15,9 +19,11 @@ function classNames(...classes: string[]) {
 }
 
 export default function Navbar() {
-
-  // const swres = useAccount()
-  // console.log(swres)
+  // const {account} = useAccount()
+  // console.log(account)
+  debugger
+  const {provider} = useWeb3()
+  console.log("Provider ",provider)
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (

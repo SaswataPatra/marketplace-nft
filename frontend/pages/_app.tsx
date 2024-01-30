@@ -1,4 +1,5 @@
-import Web3Provider from "@/components/providers/web3";
+
+import { Web3Provider } from "@/components/providers";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 

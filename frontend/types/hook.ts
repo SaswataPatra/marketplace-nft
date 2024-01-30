@@ -1,20 +1,22 @@
-import { MetaMaskInpageProvider } from "@metamask/providers"
-import { Contract } from "ethers"
-import { BrowserProvider } from "ethers"
-import { SWRResponse } from "swr"
+import { MetaMaskInpageProvider } from "@metamask/providers";
+import { Contract, BrowserProvider } from "ethers"
+import { SWRResponse } from "swr";
 
 
 export type Web3Dependencies = {
-    ethereum : MetaMaskInpageProvider,
-    provider : BrowserProvider |null,
-    contract : Contract,
-    isLoading : boolean
+  provider: BrowserProvider | null;
+  contract: Contract;
+  ethereum: MetaMaskInpageProvider,
+  isLoading: boolean
+}
+export type CryptoHookFactory<D = any, R = any, P = any> = {
+  (d: Partial<Web3Dependencies>): CryptoHandlerHook<D, R, P>
 }
 
-export type CryptoHookFactory<D=any,R=any,P=any> = {
-    (D:Partial<Web3Dependencies>) : CryptoHandlerHook<D,R,P>
-}
+export type CryptoHandlerHook<D = any, R = any, P = any> = (params?: P) => CryptoSWRResponse<D, any>&R
 
-export type CryptoHandlerHook<D=any,R=any,P=any> = (params? : P) => CryptoSWResponse<D,R>
+export type CryptoSWRResponse<D = any, R = any> = SWRResponse<D> & R;
 
-export type CryptoSWResponse<D=any,R=any> = SWRResponse<D>&R
+// export type CryptoHookFactory<D = any, P = any> = {
+//   (d: Partial<Web3Dependencies>): (params: P) => SWRResponse<D>
+// }

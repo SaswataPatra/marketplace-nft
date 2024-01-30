@@ -1,7 +1,8 @@
 import { FunctionComponent, createContext, useContext, useEffect, useState } from "react";
 import { Web3State, createDefaultState, createWeb3State, loadContract } from "./utils";
-import { ethers } from "ethers";
 import { MetaMaskInpageProvider } from "@metamask/providers";
+import { ethers } from "ethers";
+
 
 const Web3Context = createContext<Web3State>(createDefaultState());
 
@@ -15,11 +16,11 @@ const Web3Provider: FunctionComponent<any> = ({ children }) => {
 
     const ethereum = typeof window !== 'undefined' ? window.ethereum : null;
     const provider = ethereum ? new ethers.BrowserProvider(ethereum) : null;
-    var flag = 0
     useEffect(() => {
         async function initWeb3() {
-            const contract = await loadContract("GoldToken", provider!);
-
+            debugger
+            const contract = await loadContract("SimpleStorage", provider!);
+            debugger
             try {
                 setGlobalListeners(window.ethereum)
                 setweb3Api(createWeb3State({

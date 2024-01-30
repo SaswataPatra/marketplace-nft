@@ -35,6 +35,7 @@ export const createDefaultState = () =>{
 }
 
 export const createWeb3State = ({ethereum,provider,contract,isLoading}: Web3Dependencies) =>{
+  debugger
   return {
     ethereum,
     provider,
